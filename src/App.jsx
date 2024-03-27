@@ -1,5 +1,11 @@
+import SignIn from "./Pages/signIn";
+
 function App() {
-  return <h1 className="text-center text-red-500">HOMEPAGE</h1>;
+  return (
+    <>
+    <SignIn/>
+    </>
+  );
 }
 
 export default App;

@@ -2,8 +2,16 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customRed: '#891619',
+      },
+      backgroundColor:{
+        customRed:'#891619',
+      }
+    },
   },
   plugins: [],
+  
 };
 
