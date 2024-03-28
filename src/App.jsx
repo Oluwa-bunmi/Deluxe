@@ -4,6 +4,7 @@ import "./assets/font/font.css";
 import ForgotPassword from "./pages/ForgotPassword";
 import NewPassword from "./pages/NewPassword";
 import Login from "./pages/Login";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/login" element={<Login />} />;
       <Route path="/forgot-password" element={<ForgotPassword/>} />;
       <Route path="/create-new-password" element={<NewPassword/>} />;
+      <Route path="/about-us" element={<About/>} />;
     </Routes>
   );
 }

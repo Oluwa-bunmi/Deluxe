@@ -7,9 +7,16 @@ export default {
         primary: "#891619",
         dark: "#1B1B1B",
         gray: "#B2B0BB",
+        light: "#F8F1F1",
+        darkTwo: "#2E0708",
       },
       fontFamily: {
         hat: "'Red Hat Display', sans-serif",
+      },
+      backgroundImage: {
+       aboutBg: "url('../src/assets/aboutBanner.png')",
+        // servicesBg: "url('../src/assets/servicesBg.png')",
+        // footerBg: "url('../src/assets/footerBg.png')",
       },
     },
   },
