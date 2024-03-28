@@ -15,8 +15,7 @@ export default {
       },
       backgroundImage: {
        aboutBg: "url('../src/assets/aboutBanner.png')",
-        // servicesBg: "url('../src/assets/servicesBg.png')",
-        // footerBg: "url('../src/assets/footerBg.png')",
+        contactBg: "url('../src/assets/contactBanner.png')",
       },
     },
   },
