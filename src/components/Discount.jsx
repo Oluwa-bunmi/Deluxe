@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import discountImg from "../assets/discountBg.png";
-const Discount = () => {
+// import discountImg from "../assets/discountBg.png";
+const Discount = ({src}) => {
   return (
     <section>
       <div className="container grid lg:grid-cols-2 items-center pb-[55px] gap-[60px]">
-        <img src={discountImg} alt="gold rings on a white surface." />
+        <img src={src} alt="gold rings on a white surface." />
         <div>
           <h2 className="accia font-semibold text-[40px] leading-[54px] text-primary">
             Buy with Discount today!

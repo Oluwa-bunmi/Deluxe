@@ -14,7 +14,7 @@ const Banner = ({ title, description, backgroundImage, link, path, display }) =>
         <Link
           to={path}
           className={`text-xl mt-[64px] bg-primary rounded-[12px] text-white font-medium px-[38px] py-2 ${display}`}
-        //   className=""
+      
         >
           {link}
         </Link>

@@ -2,6 +2,7 @@ import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 import necklaceOne from "../assets/necklaceOne.png";
 import necklaceTwo from "../assets/necklaceTwo.png";
+import discount from "../assets/discountBg.png";
 import GridContainer from "../components/GridContainer";
 import Discount from "../components/Discount";
 const About = () => {
@@ -35,7 +36,7 @@ const About = () => {
         subtitle={`We provide anything you need to slay in the world of fashion, we sell quality and affordable jewelries and accessories at affordable prices. With our user-friendly platform, we make it easy for you to browse through our collection and make your orders with ease. <br> <br> Our luxury jewelries range from  necklaces to wrist watches to rings all made of gold, diamond and sapphire, bringing you quality and sophisticated jewelries with ease. `}
         src={necklaceTwo}
       />
-      <Discount />
+      <Discount src={discount}/>
     </>
   );
 };

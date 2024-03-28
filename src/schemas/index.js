@@ -33,3 +33,9 @@ export const newPasswordSchema = yup.object().shape({
     .oneOf([yup.ref("password"), null], "Passwords must match")
     .required("Required"),
 });
+export const contactSchema = yup.object().shape({
+  message: yup
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .required("Required"),
+});

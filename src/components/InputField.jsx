@@ -28,6 +28,7 @@ const InputField = ({
         onBlur={onBlur}
       />
       {error && <p className="text-red-500 text-sm font-medium">{error}</p>}
+      
     </div>
   );
 };
