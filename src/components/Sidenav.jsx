@@ -44,7 +44,7 @@ const Sidenav = () => {
                     <img src={logo} alt='Deluxe Gem logo' className={`${isMobile ? 'w-52' : 'w-64'} mt-1='true' ml-5='true' mr-4='true'`}/>
                 </div>
 
-                <ul className={`${isMobile ? 'ml-4' : 'ml-10'} p-4`}>
+                <ul className={`${isMobile ? 'ml-4' : 'ml-10'} p-4 mb-36`}>
                     {routes.map((route, index) => (
                     <li key={index} onClick={() => handleClick(route.name)} className={`flex ${isMobile ? 'flex-col items-center' : 'flex-row'} w-${isMobile ? 'full' : '72'} mb-7 space-x-4 text-dark font-hat font-medium text-sm ${isActiveItem === route.name ? 'bg-primary text-lightTwo w-[233px] h-[60px] rounded-tl-lg rounded-bl-lg pt-4 pb-4 pr-2.5 pl-2.5' : ''}`}>
                     {!isMobile && <img src={route.icon} alt={route.name} className='w-5 h-5' />}                        
