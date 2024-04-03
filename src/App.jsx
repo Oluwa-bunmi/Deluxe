@@ -7,16 +7,37 @@ import Login from "./pages/Login";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
+
 function App() {
   return (
-    <Routes>
-      <Route path="/signup" element={<SignUp />} />;
-      <Route path="/login" element={<Login />} />;
-      <Route path="/forgot-password" element={<ForgotPassword/>} />;
-      <Route path="/create-new-password" element={<NewPassword/>} />;
-      <Route path="/about-us" element={<About/>} />;
-      <Route path="/contact-us" element={<Contact/>} />;
-    </Routes>
+    // <Routes>
+    //   <Route path="/signup" element={<SignUp />} />;
+    //   <Route path="/login" element={<Login />} />;
+    //   <Route path="/forgot-password" element={<ForgotPassword/>} />;
+    //   <Route path="/create-new-password" element={<NewPassword/>} />;
+    //   <Route path="/about-us" element={<About/>} />;
+    //   <Route path="/contact-us" element={<Contact/>} />;
+    // </Routes>
+    <div>
+      <div>
+      <Login/>
+      </div>
+      <div>
+      <SignUp/>
+      </div>
+      <div>
+      <ForgotPassword/>
+      </div>
+      <div>
+      <NewPassword/>
+      </div>
+      <div>
+      <About/>
+      </div>
+      <div>
+      <Contact/>
+      </div>
+    </div>
   );
 }
 
