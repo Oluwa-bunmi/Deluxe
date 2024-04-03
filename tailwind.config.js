@@ -9,6 +9,7 @@ export default {
         gray: "#B2B0BB",
         light: "#F8F1F1",
         darkTwo: "#2E0708",
+        lightTwo: "#FFFFFF",
       },
       fontFamily: {
         hat: "'Red Hat Display', sans-serif",
