@@ -5,11 +5,11 @@ import NavList from './NavList';
 
 const Header = () => {
   return (
-    <div className=''>
-      <div >
+    <div className='flex flex-row gap-x-14 mt-4'>
+      <div> 
         <WelcomeMsg/>
       </div>
-      <div className='flex flex-row'>
+      <div className='flex flex-row gap-x-[216px]'>
       <Search/>
       <NavList/>
       </div>
