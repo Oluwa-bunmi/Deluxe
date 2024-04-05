@@ -1,5 +1,5 @@
 // import { Route, Routes } from "react-router-dom";
-// import SignUp from "./pages/SignUp";
+import SignUp from "./pages/SignUp";
 // import "./assets/font/font.css";
 // import ForgotPassword from "./pages/ForgotPassword";
 // import NewPassword from "./pages/NewPassword";
@@ -17,9 +17,14 @@ function App() {
     //   <Route path="/about-us" element={<About/>} />;
     //   <Route path="/contact-us" element={<Contact/>} />;
     // </Routes>
-    <div>
+    <>
+        <div>
       <Collection/>
     </div>
+
+    
+    
+    </>
   );
 }
 
