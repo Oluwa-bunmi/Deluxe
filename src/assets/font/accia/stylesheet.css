@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-SemiBoldItalic.eot');
+    src: local('Accia Moderato Semi Bold Italic'), local('AcciaModerato-SemiBoldItalic'),
+        url('AcciaModerato-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-SemiBoldItalic.woff2') format('woff2'),
+        url('AcciaModerato-SemiBoldItalic.woff') format('woff'),
+        url('AcciaModerato-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-ExtraBold.eot');
+    src: local('Accia Moderato Extra Bold'), local('AcciaModerato-ExtraBold'),
+        url('AcciaModerato-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-ExtraBold.woff2') format('woff2'),
+        url('AcciaModerato-ExtraBold.woff') format('woff'),
+        url('AcciaModerato-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-Light.eot');
+    src: local('Accia Moderato Light'), local('AcciaModerato-Light'),
+        url('AcciaModerato-Light.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-Light.woff2') format('woff2'),
+        url('AcciaModerato-Light.woff') format('woff'),
+        url('AcciaModerato-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-Bold.eot');
+    src: local('Accia Moderato Bold'), local('AcciaModerato-Bold'),
+        url('AcciaModerato-Bold.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-Bold.woff2') format('woff2'),
+        url('AcciaModerato-Bold.woff') format('woff'),
+        url('AcciaModerato-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-LightItalic.eot');
+    src: local('Accia Moderato Light Italic'), local('AcciaModerato-LightItalic'),
+        url('AcciaModerato-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-LightItalic.woff2') format('woff2'),
+        url('AcciaModerato-LightItalic.woff') format('woff'),
+        url('AcciaModerato-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-Medium.eot');
+    src: local('Accia Moderato Medium'), local('AcciaModerato-Medium'),
+        url('AcciaModerato-Medium.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-Medium.woff2') format('woff2'),
+        url('AcciaModerato-Medium.woff') format('woff'),
+        url('AcciaModerato-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-ExtLtIta.eot');
+    src: local('Accia Moderato ExtLt Ita'), local('AcciaModerato-ExtLtIta'),
+        url('AcciaModerato-ExtLtIta.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-ExtLtIta.woff2') format('woff2'),
+        url('AcciaModerato-ExtLtIta.woff') format('woff'),
+        url('AcciaModerato-ExtLtIta.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-Italic.eot');
+    src: local('Accia Moderato Italic'), local('AcciaModerato-Italic'),
+        url('AcciaModerato-Italic.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-Italic.woff2') format('woff2'),
+        url('AcciaModerato-Italic.woff') format('woff'),
+        url('AcciaModerato-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-ThinItalic.eot');
+    src: local('Accia Moderato Thin Italic'), local('AcciaModerato-ThinItalic'),
+        url('AcciaModerato-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-ThinItalic.woff2') format('woff2'),
+        url('AcciaModerato-ThinItalic.woff') format('woff'),
+        url('AcciaModerato-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-MediumItalic.eot');
+    src: local('Accia Moderato Medium Italic'), local('AcciaModerato-MediumItalic'),
+        url('AcciaModerato-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-MediumItalic.woff2') format('woff2'),
+        url('AcciaModerato-MediumItalic.woff') format('woff'),
+        url('AcciaModerato-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-Thin.eot');
+    src: local('Accia Moderato Thin'), local('AcciaModerato-Thin'),
+        url('AcciaModerato-Thin.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-Thin.woff2') format('woff2'),
+        url('AcciaModerato-Thin.woff') format('woff'),
+        url('AcciaModerato-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-ExtraBoldItalic.eot');
+    src: local('Accia Moderato ExtBd Ita'), local('AcciaModerato-ExtraBoldItalic'),
+        url('AcciaModerato-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-ExtraBoldItalic.woff2') format('woff2'),
+        url('AcciaModerato-ExtraBoldItalic.woff') format('woff'),
+        url('AcciaModerato-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-Regular.eot');
+    src: local('Accia Moderato Regular'), local('AcciaModerato-Regular'),
+        url('AcciaModerato-Regular.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-Regular.woff2') format('woff2'),
+        url('AcciaModerato-Regular.woff') format('woff'),
+        url('AcciaModerato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-SemiBold.eot');
+    src: local('Accia Moderato Semi Bold'), local('AcciaModerato-SemiBold'),
+        url('AcciaModerato-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-SemiBold.woff2') format('woff2'),
+        url('AcciaModerato-SemiBold.woff') format('woff'),
+        url('AcciaModerato-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-ExtraLight.eot');
+    src: local('Accia Moderato Extra Light'), local('AcciaModerato-ExtraLight'),
+        url('AcciaModerato-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-ExtraLight.woff2') format('woff2'),
+        url('AcciaModerato-ExtraLight.woff') format('woff'),
+        url('AcciaModerato-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Accia Moderato';
+    src: url('AcciaModerato-BoldItalic.eot');
+    src: local('Accia Moderato Bold Italic'), local('AcciaModerato-BoldItalic'),
+        url('AcciaModerato-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('AcciaModerato-BoldItalic.woff2') format('woff2'),
+        url('AcciaModerato-BoldItalic.woff') format('woff'),
+        url('AcciaModerato-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+

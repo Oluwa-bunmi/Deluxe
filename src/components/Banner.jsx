@@ -7,7 +7,7 @@ const Banner = ({ title, description, backgroundImage, link, path, display }) =>
           {title}
         </h1>
         <p
-          className="accia text-[24px] leading-[32px] text-darkTwo"
+          className="accia text-[24px] leading-[32px] text-darkTwo font-normal"
           dangerouslySetInnerHTML={{ __html: description }}
         />
 

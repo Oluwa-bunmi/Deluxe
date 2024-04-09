@@ -101,7 +101,7 @@ const Contact = () => {
           </form>
         </div>
       </section>
-      <Discount src={discount}/>
+      <Discount src={discount} />
     </>
   );
 };
