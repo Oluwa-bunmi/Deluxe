@@ -1,11 +1,15 @@
-// import SignUp from "./pages/SignUp";
-// import "./assets/font/font.css";
-// import ForgotPassword from "./pages/ForgotPassword";
-// import NewPassword from "./pages/NewPassword";
-// import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import "./assets/font/font.css";
+import ForgotPassword from "./pages/ForgotPassword";
+import NewPassword from "./pages/NewPassword";
+import Login from "./pages/Login";
 // import About from "./pages/About";
 // import Contact from './pages/Contact'
 import Collection from "./pages/Collection";
+import Orders from "./pages/Orders";
+import Account from "./pages/Account";
+import Payment from "./pages/Payment";
+import Setting from "./pages/Setting";
 function App() {
   return (
     // <Routes>
@@ -18,8 +22,15 @@ function App() {
     // </Routes>
     <>
     <div>
-      <Collection/>
-    </div>
+       {/* <Account/> */}
+      {/* <Payment/> */}
+      <Setting/> 
+      {/* <Collection/> */}
+      {/* <SignUp/>
+      <Login/>
+      <ForgotPassword/>
+      <NewPassword/> */}
+      </div>
       </>
   );
 }

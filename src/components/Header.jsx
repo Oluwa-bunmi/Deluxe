@@ -5,7 +5,8 @@ import NavList from './NavList';
 
 const Header = () => {
   return (
-    <div className='flex flex-row gap-x-14 mt-4'>
+    <>
+    <div className='flex flex-row gap-x-14 fixed h-20 pl-[300px]'>
       <div> 
         <WelcomeMsg/>
       </div>
@@ -15,6 +16,7 @@ const Header = () => {
       </div>
       
     </div>
+    </>
   )
 }
 

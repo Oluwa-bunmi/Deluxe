@@ -11,10 +11,10 @@ import walletadd from "../assets/walletadd.png";
 
 const Sidenav = () => {
     const routes = [
-        {path:'./',name:'Collection',icon:shop},
-        {path:'/',name:'Order',icon:shoppingCart},
-        {path:'./',name:'Payment',icon:walletadd},
-        {path:'./',name:'My Account',icon:profile},
+        {path:'../pages/Collection.jsx',name:'Collection',icon:shop},
+        {path:'../pages/Orders.jsx',name:'Order',icon:shoppingCart},
+        {path:'../pages/Payment.jsx',name:'Payment',icon:walletadd},
+        {path:'../pages/Account.jsx',name:'My Account',icon:profile},
         {path:'./',name:'Settings',icon:setting},
         {path:'./',name:'Customer Support',icon:call}
     ];
@@ -39,7 +39,7 @@ const Sidenav = () => {
 
     return (
         <>
-            <nav className={`h-screen  ${isMobile ? 'w-full' : 'w-72'} bg-light `}>
+            <nav className={`h-[1024px] fixed ${isMobile ? 'w-full' : 'w-72'} bg-light`}>
                 <div className=' flex justify-center'>
                     <img src={logo} alt='Deluxe Gem logo' className={`${isMobile ? 'w-52' : 'w-64'} mt-1='true' ml-5='true' mr-4='true'`}/>
                 </div>
@@ -47,7 +47,7 @@ const Sidenav = () => {
                 <ul className={`${isMobile ? 'ml-4' : 'ml-10'} p-4 mb-36`}>
                     {routes.map((route, index) => (
                     <li key={index} onClick={() => handleClick(route.name)} className={`flex ${isMobile ? 'flex-col items-center' : 'flex-row'} w-${isMobile ? 'full' : '72'} mb-7 space-x-4 text-dark font-hat font-medium text-sm ${isActiveItem === route.name ? 'bg-primary text-lightTwo w-[233px] h-[60px] rounded-tl-lg rounded-bl-lg pt-4 pb-4 pr-2.5 pl-2.5' : ''}`}>
-                    {!isMobile && <img src={route.icon} alt={route.name} className='w-5 h-5' />}                        
+                    {!isMobile && <img src={route.icon} alt={route.name} className='w-5 h-5 inline-block' />}                        
                     <Link to={route.path}>{route.name}</Link>
                     </li>
                     ))}
