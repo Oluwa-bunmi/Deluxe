@@ -1,4 +1,3 @@
-
 import { Route, Routes } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import "./assets/font/font.css";
@@ -13,7 +12,6 @@ import Home from "./pages/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
-
     <Routes>
       <Route path="/signup" element={<SignUp />} />;
       <Route path="/login" element={<Login />} />;
@@ -32,12 +30,6 @@ function App() {
       />
       ;
     </Routes>
-<<<<<<< HEAD
-=======
-
-  
-
->>>>>>> bb753ff92fdfd2ecaa6240910942efef5ef42a75
   );
 }
 

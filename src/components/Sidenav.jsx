@@ -8,7 +8,8 @@ import setting from "../assets/setting.png";
 import shop from "../assets/shop.png";
 import shoppingCart from "../assets/shoppingCart.png";
 import walletadd from "../assets/walletadd.png";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Sidenav = () => {
   const navigate = useNavigate();
   const routes = [
@@ -39,6 +40,7 @@ const Sidenav = () => {
   };
   const handleLogout = () => {
     localStorage.removeItem("token");
+    toast.success("Successfully logged out");
     navigate("/login");
   };
   return (

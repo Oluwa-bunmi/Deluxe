@@ -4,8 +4,8 @@ import logo from "../assets/logo.png";
 import { loginSchema } from "../schemas";
 import { Axios } from "../config";
 import { useFormik } from "formik";
-import { toast } from "react-toastify";
 import Request from "../lib/requests";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { useState } from "react";
