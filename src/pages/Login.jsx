@@ -35,10 +35,11 @@ const Login = () => {
     }
     try {
       const res = await Axios.post(Request.login, payload);
+     
       localStorage.setItem("token", res.data.token);
       navigate("/");
     } catch (error) {
-      // console.log(error);
+     
       toast.error(error?.response.data.message);
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));

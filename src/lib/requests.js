@@ -1,7 +1,7 @@
 const Request = {
   signup: "/signup",
   login: "/login",
-  forgotPassword: "/forgot-password",
+  forgotPassword: "/forgotPassword",
   newPassword: "/new-password",
   contactUs: "/contact",
 };

@@ -6,10 +6,13 @@ import GridContainer from "../components/GridContainer";
 import Testimonial from "../components/Testimonial";
 import Discount from "../components/Discount";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 const Home = () => {
   return (
     <>
+    <Navbar/>
       <section className="bg-light ">
+     
         <div className="grid lg:grid-cols-2 items-center gap-[44px] container">
           <div className="lg:order-2">
             <img
@@ -47,6 +50,7 @@ const Home = () => {
         orderOne={`lg:order-2`}
         orderTwo={`lg:order-1`}
       />
+
       <Footer />
     </>
   );
