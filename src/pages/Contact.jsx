@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import Request from "../lib/requests";
 import { Axios } from "../config";
 import Discount from "../components/Discount";
+import Footer from "../components/Footer";
 const Contact = () => {
   const initialValues = {
     message: "",
@@ -101,7 +102,8 @@ const Contact = () => {
           </form>
         </div>
       </section>
-      <Discount src={discount}/>
+      <Discount src={discount} />
+      <Footer />
     </>
   );
 };

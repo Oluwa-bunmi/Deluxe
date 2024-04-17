@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-// import discountImg from "../assets/discountBg.png";
-const Discount = ({src}) => {
+const Discount = ({src, orderOne, orderTwo}) => {
   return (
     <section>
       <div className="container grid lg:grid-cols-2 items-center pb-[55px] gap-[60px]">
-        <img src={src} alt="gold rings on a white surface." />
-        <div>
+        <img
+          src={src}
+          alt="gold rings on a white surface."
+          className={`${orderOne} lg:w-full`}
+        />
+        <div className={`${orderTwo}`}>
           <h2 className="accia font-semibold text-[40px] leading-[54px] text-primary">
             Buy with Discount today!
           </h2>

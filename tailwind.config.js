@@ -5,17 +5,19 @@ export default {
     extend: {
       colors: {
         primary: "#891619",
+        secondary: "#F4E5DE",
         dark: "#1B1B1B",
         gray: "#B2B0BB",
         light: "#F8F1F1",
         darkTwo: "#2E0708",
         lightTwo: "#FFFFFF",
+        tertiary: "#450B0D",
       },
       fontFamily: {
         hat: "'Red Hat Display', sans-serif",
       },
       backgroundImage: {
-       aboutBg: "url('../src/assets/aboutBanner.png')",
+        aboutBg: "url('../src/assets/aboutBanner.png')",
         contactBg: "url('../src/assets/contactBanner.png')",
       },
     },

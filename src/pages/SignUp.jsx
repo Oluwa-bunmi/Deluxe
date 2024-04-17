@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import heroImg from "../assets/auth.png";
 import logo from "../assets/logo.png";
 import { signupSchema } from "../schemas";
@@ -7,7 +7,6 @@ import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import Request from "../lib/requests";
 import "react-toastify/dist/ReactToastify.css";
-
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
@@ -17,8 +16,8 @@ import AuthBtn from "../components/AuthBtn";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
-   const [isChecked, setIsChecked] = useState(false);
-
+  const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -29,38 +28,30 @@ const SignUp = () => {
   };
 
   const onSubmit = async (payload, actions) => {
-     if (!isChecked) {
-       toast.error("Please check the box", {
-         position: "top-right",
-         style: {
-           zIndex: "100",
-         },
-       });
-       return;
-     }
+    if (!isChecked) {
+      toast.error("Please check the box");
+      return;
+    }
     try {
       const res = await Axios.post(Request.signup, payload);
-      if (res.data.status === "success") {
-        toast.success("Message sent successfully!", {
-          position: "top-right",
-          style: {
-            zIndex: "100",
-          },
-        });
+      if (res.data.message === "User created successfully") {
+     
+        toast.success("Account created");
+
+        navigate("/login");
+        localStorage.setItem("username", payload.username);
       } else {
-        toast.error("Message sending unsuccessful. Please try again.", {
+        toast.error("Not successful, please try again.", {
           position: "top-right",
         });
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again later.", {
-        position: "top-right",
-      });
+       toast.error(error?.response.data.message);
+      console.log(error);
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
-     setIsChecked(false);
-    
+    setIsChecked(false);
   };
 
   const {
@@ -117,7 +108,7 @@ const SignUp = () => {
             onBlur={handleBlur}
             error={getError("email")}
           />
-          <div className="flex flex-col mb-[20px]">
+          {/* <div className="flex flex-col mb-[20px]">
             <label
               htmlFor="location"
               className="text-[16px] text-dark font-medium"
@@ -135,7 +126,7 @@ const SignUp = () => {
               <option value="">Abeokuta</option>
               <option value="">Benue</option>
             </select>
-          </div>
+          </div> */}
           <div className="flex flex-col mb-[20px]">
             <label
               htmlFor="password"

@@ -1,7 +1,14 @@
 @font-face {
   font-family: "Accia";
-  src: url("./accia/Mint\ Type\ -\ AcciaModerato-Light.otf") format("truetype");
-
+  /* src: url("./accia/Mint\ Type\ -\ AcciaModerato-Light.otf") format("truetype"); */
+  src: url("./accia/AcciaModerato-Bold.ttf"),
+    url("./accia/AcciaModerato-ExtraBold.ttf"),
+    url("./accia/AcciaModerato-ExtraLight.ttf"),
+    url("./accia/AcciaModerato-Light.ttf"),
+    url("./accia/AcciaModerato-Medium.ttf"),
+    url("./accia/AcciaModerato-Regular.ttf"),
+    url("./accia/AcciaModerato-SemiBold.ttf"),
+    url("./accia/AcciaModerato-Thin.ttf");
 }
 .accia {
   font-family: "Accia" !important;

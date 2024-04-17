@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import heroImg from "../assets/auth.png";
 import logo from "../assets/logo.png";
 import { loginSchema } from "../schemas";
@@ -18,6 +18,7 @@ import AuthBtn from "../components/AuthBtn";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -29,32 +30,16 @@ const Login = () => {
 
   const onSubmit = async (payload, actions) => {
     if (!isChecked) {
-      toast.error("Please check the box", {
-        position: "top-right",
-        style: {
-          zIndex: "100",
-        },
-      });
+      toast.error("Please check the box");
       return;
     }
     try {
-      const res = await Axios.post(Request.signup, payload);
-      if (res.data.status === "success") {
-        toast.success("Message sent successfully!", {
-          position: "top-right",
-          style: {
-            zIndex: "100",
-          },
-        });
-      } else {
-        toast.error("Unsuccessful. Please try again.", {
-          position: "top-right",
-        });
-      }
+      const res = await Axios.post(Request.login, payload);
+      localStorage.setItem("token", res.data.token);
+      navigate("/");
     } catch (error) {
-      toast.error("An error occurred. Please try again later.", {
-        position: "top-right",
-      });
+      // console.log(error);
+      toast.error(error?.response.data.message);
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();

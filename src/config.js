@@ -1,8 +1,12 @@
 import axios from "axios";
 export const Axios = axios.create({
-  baseURL: "https://api.deluxe.com/",
+  baseURL: "https://deluxgem-2.onrender.com/",
   headers: {
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
+    Authorization: `bearer ${localStorage.getItem("token")}`
+    // "Access-Control-Allow-Origin": "*",
   },
 });
+
+
+
