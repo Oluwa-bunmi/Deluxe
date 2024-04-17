@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logoTwo.png";
 import facebook from "../assets/facebook.png";
 import whatsapp from "../assets/whatsapp.png";
 import twitter from "../assets/twitter.png";
@@ -7,11 +7,11 @@ import instagram from "../assets/instagram.png";
 const Footer = () => {
   return (
     <footer className="bg-secondary pt-[80px] pb-[120px]">
-      <div className="container flex justify-between">
+      <div className="container flex flex-col lg:flex-row justify-between items-center">
         <Link to="/">
           <img src={logo} alt="logo" />
         </Link>
-        <div className="flex flex-wrap gap-[30px]">
+        <div className="flex flex-wrap gap-[50px] lg:gap-[30px]">
           <ul>
             <li className="text-primary leading-[24px] font-bold text-[16px] mb-[16px]">
               Useful Links
@@ -101,7 +101,7 @@ const Footer = () => {
             </li>
             <li className="mt-[39px] text-primary leading-[24px] text-[16px] font-medium">
               Opening Hours <br />
-              <span className="text-tertiary">Mon - Sat: 7AM - 7AM</span>
+              <span className="text-tertiary">Mon - Sat: 7AM - 7PM</span>
             </li>
           </ul>
         </div>

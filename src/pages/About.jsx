@@ -5,6 +5,7 @@ import necklaceTwo from "../assets/necklaceTwo.png";
 import discount from "../assets/discountBg.png";
 import GridContainer from "../components/GridContainer";
 import Discount from "../components/Discount";
+import Footer from "../components/Footer";
 const About = () => {
   return (
     <>
@@ -39,6 +40,7 @@ const About = () => {
       <Discount 
       src={discount}
       />
+      <Footer/>
     </>
   );
 };

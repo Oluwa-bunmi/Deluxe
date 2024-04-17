@@ -41,7 +41,7 @@ const Home = () => {
         subtitle={`<br> Get ready to explore our latest collections, track your orders, and enjoy personalized recommendations just for you. Let's make your Deluxe Gem experience even more unforgettable!"`}
         src={deluxeIntro}
       />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Discount
         src={discount}
         orderOne={`lg:order-2`}
