@@ -1,3 +1,4 @@
+
 import { Route, Routes } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import "./assets/font/font.css";
@@ -6,10 +7,12 @@ import NewPassword from "./pages/NewPassword";
 import Login from "./pages/Login";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+
 import Collection from "./pages/Collection";
 import Home from "./pages/Home";
 function App() {
   return (
+
     <Routes>
       <Route path="/signup" element={<SignUp />} />;
       <Route path="/login" element={<Login />} />;
@@ -20,7 +23,9 @@ function App() {
       <Route path="/contact-us" element={<Contact/>} />;
       <Route path="/dashboard" element={<Collection/>} />;
     </Routes>
- 
+
+  
+
   );
 }
 

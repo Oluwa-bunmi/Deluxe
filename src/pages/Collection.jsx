@@ -23,13 +23,16 @@ const Collection = () => {
         <Sidenav/>
     </div>
     <div>
-    <div className='flex flex-row justify-center w-[1110px] h-20 mt-4 border'>
+    <div >
         <Header/>
     </div>
     <main>
     <div className=' mt-6 w-[986px] h-80 ml-16 mr-20'>
         <div className='text-hat w-32 h-7 font-bold size-5 text-primary mb-11 '>
-            <p>Newly Added</p>
+            <div className='flex flex-row gap-x-[715px] mt-10' >
+            <p className='text-nowrap font-hat h-7 w-[127px]'>Newly Added</p>
+            <p className='text-nowrap underline font-hat w-[115px] h-7 font-medium text-sm'>Multiple Selection</p>
+            </div>
                 <div className='flex flex-row gap-x-10'>
                     <Cards imgSrc={Product1} AddedSrc={Added} altText={'Luxury White Earrings'} productName={'Luxury White Earring'}price= {'#3,000'}/>
                     <Cards imgSrc={Product2} AddedSrc={Added} altText={'Classy Gold Rings'} productName={'Classy Gold Rings'}price= {'#3,000'}/>
@@ -57,4 +60,4 @@ const Collection = () => {
   )
 }
 
-export default Collection
+export default Collection;
