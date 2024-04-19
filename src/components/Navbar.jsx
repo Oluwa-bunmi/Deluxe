@@ -74,16 +74,16 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </Link>
         <ul className="hidden lg:flex items-center gap-[30px]">
-          <li className="text-[16px] font-normal text-tertiary leading-[24px]">
+          <li className="text-[16px] font-normal text-tertiary leading-[24px] hover:font-bold">
             <NavLink to="/about-us">Home</NavLink>
           </li>
-          <li className="text-[16px] font-normal text-tertiary leading-[24px]">
+          <li className="text-[16px] font-normal text-tertiary leading-[24px] hover:font-bold">
             <NavLink to="/about-us">About Us</NavLink>
           </li>
-          <li className="text-[16px] font-normal text-tertiary leading-[24px]">
+          <li className="text-[16px] font-normal text-tertiary leading-[24px] hover:font-bold">
             <NavLink to="/contact-us">Contact Us</NavLink>
           </li>
-          <li className="text-[16px] font-normal text-tertiary leading-[24px]">
+          <li className="text-[16px] font-normal text-tertiary leading-[24px] hover:font-bold">
             <NavLink to="/collections">Collections</NavLink>
           </li>
         </ul>

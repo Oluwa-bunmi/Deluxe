@@ -18,7 +18,7 @@ import Header from '../components/Header';
 const Collection = () => {
   return (
     <>
-    <div className='flex flex-row gap-x-8 h-screen' >
+    <div className='flex flex-col-reverse lg:flex-row gap-x-8' >
     <div>
         <Sidenav/>
     </div>
@@ -26,7 +26,7 @@ const Collection = () => {
     <div >
         <Header/>
     </div>
-    <main>
+    {/* <main>
     <div className=' mt-6 w-[986px] h-80 ml-16 mr-20'>
         <div className='text-hat w-32 h-7 font-bold size-5 text-primary mb-11 '>
             <div className='flex flex-row gap-x-[715px] mt-10' >
@@ -53,7 +53,7 @@ const Collection = () => {
 
         </div>
     </div>
-    </main>
+    </main> */}
     </div>
     </div>
     </>

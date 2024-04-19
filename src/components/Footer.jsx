@@ -50,7 +50,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="/terms"
+                to="/terms-and-conditions"
                 className="leading-[24px] text-[16px] font-medium text-tertiary"
               >
                 Terms & Conditions

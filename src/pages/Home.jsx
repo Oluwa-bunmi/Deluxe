@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import heroImg from "../assets/heroImg.png";
+import demo from "../assets/demo.png";
 import discount from "../assets/discountBg.png";
 import deluxeIntro from "../assets/intro.png";
 import GridContainer from "../components/GridContainer";
@@ -7,12 +8,30 @@ import Testimonial from "../components/Testimonial";
 import Discount from "../components/Discount";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useState } from "react";
+import Request from "../lib/requests";
+import { Axios } from "../config";
 const Home = () => {
+  const [latest, setLatest] = useState([]);
+  useEffect(() => {
+    getLatest();
+  }, []);
+  const getLatest = async () => {
+    try {
+      const res = await Axios.get(Request.latestArrivals);
+      setLatest(res.data);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+      toast.error(`Error, ${error.message}`);
+    }
+  };
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <section className="bg-light ">
-     
         <div className="grid lg:grid-cols-2 items-center gap-[44px] container">
           <div className="lg:order-2">
             <img
@@ -44,7 +63,48 @@ const Home = () => {
         subtitle={`<br> Get ready to explore our latest collections, track your orders, and enjoy personalized recommendations just for you. Let's make your Deluxe Gem experience even more unforgettable!"`}
         src={deluxeIntro}
       />
-      {/* <Testimonial /> */}
+      <section className="pt-[48px] pb-[56px]">
+        <div className="container">
+          <h2 className="accia text-center font-semibold text-[32px] text-primary leading-[43.52px]">
+            Latest Arrivals!
+          </h2>
+          <p className="leading-[28px] text-xl text-center mb-[44px]">
+            Be the first to check out our <br /> latest arrivals section and
+            discover our hottest trends and newest products
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[70px] gap-x-[20px] sm:gap-x-[80px]">
+            {latest.map((item, i) => (
+              <div key={i} className="flex flex-col justify-between">
+                <Link to="/product">
+                  <img
+                    src={`data:image/png;base64,${item.Photo}`}
+                    alt={item.productname}
+                  />
+                </Link>
+                <div>
+                  <p className="mt-[24px] leading-[28px] text-xl text-dark font-normal">
+                    {item.productname}
+                  </p>
+                  <p className="mb-[16px] font-bold text-primary leading-[24px]">
+                    ₦{item.price}
+                  </p>
+                  <button
+                    onClick={() => {
+                      // handleAddToCart(product);
+                      toast.success(`${item.productname} added to cart`);
+                    }}
+                    className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Testimonial />
       <Discount
         src={discount}
         orderOne={`lg:order-2`}

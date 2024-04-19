@@ -2,13 +2,13 @@ import React from 'react'
 import Added from '../assets/Added.png'
 import NavCart from '../assets/NavListCart.png'
 import filter from '../assets/filter.png'
-import userProfile from '../assets/userProfile.png'
+// import userProfile from '../assets/userProfile.png'
 
 const NavList = () => {
   return (
     <div className='flex flex-row gap-x-4 pt-5 ml-8'>
         <div className='mr-4'>
-        <img src= {userProfile} Alt='user profile' className='w-10 h-10'/> 
+        {/* <img src= {userProfile} Alt='user profile' className='w-10 h-10'/>  */}
         </div>
 
       <ul className='flex flex-row w-[132px] h-7 w-[132px] gap-x-4'>

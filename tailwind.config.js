@@ -12,6 +12,7 @@ export default {
         darkTwo: "#2E0708",
         lightTwo: "#FFFFFF",
         tertiary: "#450B0D",
+        cyber: "rgb(102, 102, 102)",
       },
       fontFamily: {
         hat: "'Red Hat Display', sans-serif",

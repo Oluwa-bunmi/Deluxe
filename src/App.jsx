@@ -10,6 +10,9 @@ import Contact from "./pages/Contact";
 import Collection from "./pages/Collection";
 import Home from "./pages/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Product from "./pages/Product";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 function App() {
   return (
     <Routes>
@@ -20,6 +23,9 @@ function App() {
       <Route path="/" element={<Home />} />;
       <Route path="/about-us" element={<About />} />;
       <Route path="/contact-us" element={<Contact />} />;
+      <Route path="/product" element={<Product />} />;
+      <Route path="/privacy-policy" element={<Privacy />} />;
+      <Route path="/terms-and-conditions" element={<Terms />} />;
       <Route
         path="/dashboard"
         element={

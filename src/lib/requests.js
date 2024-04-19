@@ -3,6 +3,7 @@ const Request = {
   login: "/login",
   forgotPassword: "/forgotPassword",
   newPassword: "/new-password",
+  latestArrivals: "/products/all",
   contactUs: "/contact",
 };
 export default Request;
