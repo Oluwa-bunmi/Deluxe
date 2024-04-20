@@ -1,14 +1,18 @@
 import demo from "../assets/prodemo.png";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { IoHeartOutline, IoHeartSharp } from "react-icons/io5";
+import { useSearchParams } from "react-router-dom";
 const ProductDetail = () => {
+  const [searchParams] = useSearchParams();
+  const productId = searchParams.get("id");
+  console.log(productId);
   return (
     <section className="py-[69px]">
       <div className="container grid lg:grid-cols-2 gap-[52px] items-center">
         <div className="relative">
           <img src={demo} alt="" />
           <span className=" absolute right-[1.3rem] top-[1.3rem]">
-            <IoHeartOutline size={30}/>
+            <IoHeartOutline size={30} />
           </span>
         </div>
         <div className="flex flex-col gap-[36px]">

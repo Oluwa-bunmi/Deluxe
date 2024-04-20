@@ -6,8 +6,10 @@ import { BsCart2 } from "react-icons/bs";
 
 import logo from "../assets/logo.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const count = useSelector((data) => data.cart);
   const [modal, setModal] = useState(false);
   const token = localStorage.getItem("token");
   const handleNav = () => {
@@ -105,13 +107,13 @@ const Navbar = () => {
           <Link to="/cart" className="relative">
             <BsCart2 className="text-3xl text-primary" />
             <span className="flex items-center justify-center bg-darkTwo text-white font-bold rounded-[50%] w-[1.5rem] h-[1.5rem] text-base leading-[42px] absolute right-[-0.7rem] top-[-0.7rem]">
-              0
+              {count.length}
             </span>
           </Link>
           <div className="hidden md:block">
             {token ? (
               <Link
-                to="/dashboard"
+                to="/dashboard/collection"
                 className="bg-primary text-white text-[16px] px-[38px] rounded-lg py-2"
               >
                 Account
@@ -137,7 +139,6 @@ const Navbar = () => {
             ? "bg-white fixed z-[9999] top-0 left-0 w-full max-w-[300px] h-screen"
             : "hidden"
         }
-        // className="bg-white fixed z-[9999] top-0 left-0 w-full max-w-[300px] h-screen"
       >
         <div className="flex justify-between items-center px-[15px] py-[20px]">
           <Link>
@@ -145,7 +146,7 @@ const Navbar = () => {
           </Link>
           <IoClose className="text-3xl text-primary" onClick={handleNav} />
         </div>
-        <ul className="bloc">
+        <ul>
           <li className="text-xl px-[15px] py-[20px] font-normal text-tertiary leading-[24px] border-y border-gray ">
             <NavLink to="/about-us" className="leading-4" onClick={handleNav}>
               Home

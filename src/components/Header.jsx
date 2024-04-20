@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import user from "../assets/user.png";
-import NavList from "./NavList";
-import { Link } from "react-router-dom";
-
+import { Link, NavLink } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
+import logo from "../assets/logo.png";
+import { useSelector } from "react-redux";
 const Header = () => {
+  const [nav, setNav] = useState(false);
+  const count = useSelector((data) => data.cart);
+  const handleNav = () => {
+    setNav(!nav);
+  };
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    toast.success("Successfully logged out");
+    navigate("/login");
+  };
   return (
-    <div className="flex justify-between w-full">
-      <div className="flex items-center">
-        <h1 className="accia text-primary text-base lg:text-[24px]">
+    <div className="container flex justify-between pt-[36px] pb-[40px]">
+      <div className="flex items-center gap-[55px]">
+        <h1 className="accia hidden lg:block text-primary text-base lg:text-[24px]">
           Welcome {localStorage.getItem("username")}
         </h1>
-        <div className="hidden lg:flex items-center justify-center gap-[16px] bg-light rounded-[20px] w-[325px] py-[10px]">
+        <FaBars className="lg:hidden text-dark text-3xl" onClick={handleNav} />
+        <div className="w-[325px] hidden lg:flex items-center justify-center gap-[16px] bg-light rounded-[20px]  py-[10px]">
           <svg
             width="17"
             height="16"
@@ -106,9 +119,70 @@ const Header = () => {
           </svg>
 
           <span className="flex items-center justify-center bg-darkTwo text-white font-bold rounded-[50%] w-[1.5rem] h-[1.5rem] text-base leading-[42px] absolute right-[-0.7rem] top-[-0.7rem]">
-            0
+            {count.length}
           </span>
         </Link>
+      </div>
+      {/* Mobile nav */}
+      <div
+        style={{
+          transition: "all 0.3s ease",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.15)",
+        }}
+        className={
+          nav
+            ? "bg-white fixed z-[9999] top-0 left-0 w-full max-w-[300px] h-screen"
+            : "hidden"
+        }
+      >
+        <div className="flex justify-between items-center px-[15px] py-[20px]">
+          <Link>
+            <img src={logo} alt="logo" />
+          </Link>
+          <IoClose className="text-3xl text-primary" onClick={handleNav} />
+        </div>
+        <ul>
+          <li className="text-xl px-[15px] py-[20px] font-normal text-tertiary leading-[24px] border-y border-gray ">
+            <NavLink
+              to="/dashboard/collection"
+              className="leading-4"
+              onClick={handleNav}
+            >
+              Collection
+            </NavLink>
+          </li>
+          <li className="text-xl px-[15px] py-[20px] font-normal text-tertiary leading-[24px] border-b border-gray ">
+            <NavLink
+              to="/dashboard/myorders"
+              className="leading-4"
+              onClick={handleNav}
+            >
+              Orders
+            </NavLink>
+          </li>
+          <li className="text-xl px-[15px] py-[20px] font-normal text-tertiary leading-[24px] border-b border-gray">
+            <NavLink to="/dashboard/mypayment" onClick={handleNav}>
+              Payment
+            </NavLink>
+          </li>
+          <li className="text-xl px-[15px] py-[20px] font-normal text-tertiary leading-[24px] border-b border-gray">
+            <NavLink to="/dashboard/myaccount" onClick={handleNav}>
+              My Account
+            </NavLink>
+          </li>
+
+          <li className="text-xl px-[15px] py-[20px] font-normal text-tertiary leading-[24px] border-b border-gray">
+            <NavLink to="/dashboard/support" onClick={handleNav}>
+              Customer Support
+            </NavLink>
+          </li>
+          <li
+            onClick={handleLogout}
+            className="text-xl px-[15px] py-[20px] font-normal text-tertiary leading-[24px] border-b border-gray"
+          >
+            Logout
+          </li>
+        </ul>
       </div>
     </div>
   );

@@ -13,6 +13,9 @@
   background-color: #891619;
   color: #fff;
  }
- .dashboard.active svg{
+ .dashboard.active span{
   color: #fff;
+ }
+  .dashboard.active svg path{
+  stroke: #fff;
  }

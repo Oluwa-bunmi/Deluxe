@@ -20,6 +20,10 @@ export default {
       backgroundImage: {
         aboutBg: "url('../src/assets/aboutBanner.png')",
         contactBg: "url('../src/assets/contactBanner.png')",
+        collectionsBg: "url('../src/assets/collectionsBanner.png')",
+      },
+      boxShadow: {
+        shadow: "0 2px 22px rgba(0, 0, 0, 0.16)",
       },
     },
   },

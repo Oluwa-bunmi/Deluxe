@@ -1,15 +1,7 @@
-import { useEffect, useState } from "react";
+
 import { BiChevronRight } from "react-icons/bi";
-import { BsCart2 } from "react-icons/bs";
+
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { CiShop } from "react-icons/ci";
-import profile from "../assets/profile.png";
-import call from "../assets/call.png";
-import closesquare from "../assets/closesquare.png";
-import setting from "../assets/setting.png";
-import shop from "../assets/shop.png";
-import shoppingCart from "../assets/shoppingCart.png";
-import walletadd from "../assets/walletadd.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logo from "../assets/logoTwo.png";
@@ -88,7 +80,7 @@ const Sidenav = () => {
   };
   return (
     <>
-      <div className="bg-light w-full p-[40px]  sticky top-20 rounded-md flex flex-col items-start justify-start gap-4">
+      <div className="bg-light p-[40px] rounded-md hidden lg:flex flex-col items-start justify-start gap-4">
         <Link to="/">
           <img src={logo} alt="logo" />
         </Link>

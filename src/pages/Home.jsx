@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import heroImg from "../assets/heroImg.png";
-import demo from "../assets/demo.png";
 import discount from "../assets/discountBg.png";
 import deluxeIntro from "../assets/intro.png";
 import GridContainer from "../components/GridContainer";
@@ -8,26 +7,36 @@ import Testimonial from "../components/Testimonial";
 import Discount from "../components/Discount";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { useEffect, useState } from "react";
 import Request from "../lib/requests";
 import { Axios } from "../config";
+import { useDispatch, useSelector } from "react-redux";
+import { sendDataToCart } from "../store/reducers/cart.reducer";
+import { sendDataToProducts } from "../store/reducers/product.reducer";
+import UseProducts from "../hooks/UseProducts";
 const Home = () => {
-  const [latest, setLatest] = useState([]);
-  useEffect(() => {
-    getLatest();
-  }, []);
-  const getLatest = async () => {
-    try {
-      const res = await Axios.get(Request.latestArrivals);
-      setLatest(res.data);
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-      toast.error(`Error, ${error.message}`);
-    }
-  };
+   const {products, addToCart} = UseProducts();
+  // const latest = useSelector(data => data.products);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   getLatest();
+  // }, []);
+  // const getLatest = async () => {
+  //   try {
+  //     const res = await Axios.get(Request.latestArrivals);
+  //     dispatch(sendDataToProducts(res.data));
+  //     console.log(res);
+  //   } catch (error) {
+  //     console.log(error);
+      
+  //   }
+  // };
+
+  // const addToCart = (item) => {
+  //   dispatch(sendDataToCart(item));
+  //    toast.success(`${item.productname} added to cart`);
+  // };
   return (
     <>
       <Navbar />
@@ -74,9 +83,9 @@ const Home = () => {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[70px] gap-x-[20px] sm:gap-x-[80px]">
-            {latest.map((item, i) => (
+            {products.map((item, i) => (
               <div key={i} className="flex flex-col justify-between">
-                <Link to="/product">
+                <Link to={`/product?id=${item._id}`}>
                   <img
                     src={`data:image/png;base64,${item.Photo}`}
                     alt={item.productname}
@@ -90,10 +99,7 @@ const Home = () => {
                     ₦{item.price}
                   </p>
                   <button
-                    onClick={() => {
-                      // handleAddToCart(product);
-                      toast.success(`${item.productname} added to cart`);
-                    }}
+                    onClick={() => addToCart(item)}
                     className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
                   >
                     Add to Cart
