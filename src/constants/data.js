@@ -14,3 +14,27 @@ export const testimonial = [
     image: chi,
   },
 ];
+export const faqData = [
+  {
+    question: "Why did my payment stop working?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur. Arcu pulvinar mi lacinia vulputate massa felis.",
+  },
+  {
+    question: "Why are the shipping prices different?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur. Arcu pulvinar mi lacinia vulputate massa felis.",
+  },
+  {
+    question: "Why can't I add a new payment method?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur. Arcu pulvinar mi lacinia vulputate massa felis.",
+  },
+  {
+    question: "Why didn't I get the e-receipt after payment?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur. Arcu pulvinar mi lacinia vulputate massa felis.",
+  },
+
+];
+

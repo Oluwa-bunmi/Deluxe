@@ -34,6 +34,7 @@ export const newPasswordSchema = yup.object().shape({
     .required("Required"),
 });
 export const contactSchema = yup.object().shape({
+  email: yup.string().email("Invalid email").required("Required"),
   message: yup
     .string()
     .min(10, "Message must be at least 10 characters")
