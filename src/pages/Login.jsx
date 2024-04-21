@@ -4,8 +4,8 @@ import logo from "../assets/logo.png";
 import { loginSchema } from "../schemas";
 import { Axios } from "../config";
 import { useFormik } from "formik";
-import { toast } from "react-toastify";
 import Request from "../lib/requests";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { useState } from "react";
@@ -35,10 +35,11 @@ const Login = () => {
     }
     try {
       const res = await Axios.post(Request.login, payload);
+     
       localStorage.setItem("token", res.data.token);
       navigate("/");
     } catch (error) {
-      // console.log(error);
+     
       toast.error(error?.response.data.message);
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));

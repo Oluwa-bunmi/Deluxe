@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 const About = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Banner
         title="About Us"
         description={`Enjoy Luxury at its Peak with Quality Jewelry <br> that you can Trust!`}

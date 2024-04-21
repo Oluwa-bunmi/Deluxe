@@ -9,6 +9,7 @@ import Request from "../lib/requests";
 import { Axios } from "../config";
 import Discount from "../components/Discount";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 const Contact = () => {
   const initialValues = {
     message: "",
@@ -54,6 +55,7 @@ const Contact = () => {
   };
   return (
     <>
+      <Navbar />
       <Banner
         title="Contact Us"
         description={`Enjoy Luxury at its Peak with Quality Jewelry <br> that you can Trust!`}

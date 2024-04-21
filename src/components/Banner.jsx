@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Banner = ({ title, description, backgroundImage, link, path, display }) => {
   return (
-    <section className={`bg-cover ${backgroundImage} h-[600px]`}>
+    <section className={`bg-cover ${backgroundImage} h-[700px]`}>
       <div className="container text-center flex flex-col justify-center items-center h-full">
         <h1 className="accia text-[48px] font-semibold text-primary leading-[65.28px]">
           {title}

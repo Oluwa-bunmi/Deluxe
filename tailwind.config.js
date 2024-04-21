@@ -12,6 +12,7 @@ export default {
         darkTwo: "#2E0708",
         lightTwo: "#FFFFFF",
         tertiary: "#450B0D",
+        cyber: "rgb(102, 102, 102)",
       },
       fontFamily: {
         hat: "'Red Hat Display', sans-serif",
@@ -19,6 +20,10 @@ export default {
       backgroundImage: {
         aboutBg: "url('../src/assets/aboutBanner.png')",
         contactBg: "url('../src/assets/contactBanner.png')",
+        collectionsBg: "url('../src/assets/collectionsBanner.png')",
+      },
+      boxShadow: {
+        shadow: "0 2px 22px rgba(0, 0, 0, 0.16)",
       },
     },
   },
