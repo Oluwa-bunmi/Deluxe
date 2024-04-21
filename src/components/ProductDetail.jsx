@@ -1,23 +1,23 @@
-import demo from "../assets/prodemo.png";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { IoHeartOutline, IoHeartSharp } from "react-icons/io5";
-import { Link, useSearchParams } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
-import UseProducts from "../hooks/UseProducts";
+import { useSelector } from "react-redux";
+import { formattedAmount } from "../utils/FormattedAmount";
 
-const ProductDetail = () => {
-  const [searchParams] = useSearchParams();
-  const productId = searchParams.get("id");
-  console.log(productId);
-  const { products } = UseProducts();
-  console.log(products);
+const ProductDetail = ({ id, closeModal }) => {
+  const products = useSelector((data) => data.products);
+  const product = products.find((data) => data._id === id);
   return (
-    <section className="py-[69px]">
+    <section className="pt-[200px]">
       <div className="container grid lg:grid-cols-2 gap-[52px] items-center">
         <div className="flex flex-col gap-7">
-          <FaArrowLeft size={30} />
+          <FaArrowLeft
+            size={30}
+            onClick={closeModal}
+            className="cursor-pointer"
+          />
           <div className="relative">
-            <img src={demo} alt="" />
+            <img src={`data:image/png;base64,${product.Photo}`} alt="" />
             <span className=" absolute right-[1.3rem] top-[1.3rem]">
               <IoHeartOutline size={30} />
             </span>
@@ -26,21 +26,17 @@ const ProductDetail = () => {
         <div className="flex flex-col gap-[36px]">
           <div>
             <h1 className="accia text-[32px] font-semibold text-primary leading-[43px]">
-              Top Quality Gold Bracelet <br />
+              {product.productname}
             </h1>
-            <p className="font-bold text-xl leading-[28px]">₦3,500</p>
+            <p className="font-bold text-xl leading-[28px]">
+              {formattedAmount(product.price)}
+            </p>
           </div>
-          <p className="text-xl text-black">
-            Top quality gold bracelets at affordable price. this is made of pure
-            gold crafted from the finest raw materials and refined into a
-            durable product. This product come in different sizes and colors to
-            suite your fashion needs and make you comfortable, classy and
-            looking great on any outfit.
-          </p>
-          <span className="text-black font-medium text-xl">
+          <p className="text-xl text-black">{product.description}</p>
+          {/* <span className="text-black font-medium text-xl">
             Weighs 4.3 gram
-          </span>
-          <form className="flex flex-col sm:flex-row gap-[28px]">
+          </span> */}
+          {/* <form className="flex flex-col sm:flex-row gap-[28px]">
             <div className="flex items-center gap-[28px] lg:gap-[10px] xl:gap-[28px]">
               <label
                 htmlFor="size"
@@ -82,7 +78,7 @@ const ProductDetail = () => {
                 <option value="3">15</option>
               </select>
             </div>
-          </form>
+          </form> */}
           <div className="flex items-center gap-[28px]">
             <span className="text-xl font-normal text-primary">Quantity</span>
             <div className="border-primary border items-center justify-center gap-7 h-[38px] rounded-lg w-[170px] flex ">

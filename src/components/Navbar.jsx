@@ -16,7 +16,7 @@ const Navbar = () => {
     setNav(!nav);
   };
   return (
-    <nav>
+    <nav className="w-full fixed bg-white z-10">
       {modal && (
         <div className="fixed bg-light w-full h-screen flex items-center justify-center z-[999] ">
           <div className="border border-primary p-8 rounded">
@@ -72,12 +72,11 @@ const Navbar = () => {
       <div className="container flex justify-between items-center">
         <FaBars className="lg:hidden text-dark text-3xl" onClick={handleNav} />
         <Link to="/">
-          {/* style={{ marginTop: "2.5rem" }} */}
           <img src={logo} alt="logo" />
         </Link>
         <ul className="hidden lg:flex items-center gap-[30px]">
           <li className="text-[16px] font-normal text-tertiary leading-[24px] hover:font-bold">
-            <NavLink to="/about-us">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li className="text-[16px] font-normal text-tertiary leading-[24px] hover:font-bold">
             <NavLink to="/about-us">About Us</NavLink>

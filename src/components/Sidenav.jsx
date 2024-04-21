@@ -1,6 +1,4 @@
-
 import { BiChevronRight } from "react-icons/bi";
-
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -80,15 +78,14 @@ const Sidenav = () => {
   };
   return (
     <>
-      <div className="bg-light p-[40px] rounded-md hidden lg:flex flex-col items-start justify-start gap-4">
-        <Link to="/">
+      <div className="bg-light pl-[40px] py-[40px] w-[350px] rounded-md hidden lg:flex flex-col items-start justify-start gap-4">
+        <Link to="/dashboard/collection">
           <img src={logo} alt="logo" />
         </Link>
         {links.map((item) => (
           <NavLink
             to={item.to}
             key={item.text}
-            onClick={() => setOpenNav(true)}
             className="dashboard w-full h-14 flex justify-between items-center px-3 lg:rounded transition-all duration-300 text-base font-normal border-b lg:border-none border-gray last:border-none"
           >
             <div className="flex gap-[16px] items-center">

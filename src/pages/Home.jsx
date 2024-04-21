@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import heroImg from "../assets/heroImg.png";
 import discount from "../assets/discountBg.png";
 import deluxeIntro from "../assets/intro.png";
@@ -7,43 +7,34 @@ import Testimonial from "../components/Testimonial";
 import Discount from "../components/Discount";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-
 import { useEffect, useState } from "react";
-import Request from "../lib/requests";
-import { Axios } from "../config";
-import { useDispatch, useSelector } from "react-redux";
-import { sendDataToCart } from "../store/reducers/cart.reducer";
-import { sendDataToProducts } from "../store/reducers/product.reducer";
-import UseProducts from "../hooks/UseProducts";
+import useProducts from "../hooks/useProducts";
 import ProductDetail from "../components/ProductDetail";
+import { formattedAmount } from "../utils/FormattedAmount";
 const Home = () => {
-  const { products, addToCart } = UseProducts();
-  const [modal, setModal] = useState(false);
-  // const latest = useSelector(data => data.products);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   getLatest();
-  // }, []);
-  // const getLatest = async () => {
-  //   try {
-  //     const res = await Axios.get(Request.latestArrivals);
-  //     dispatch(sendDataToProducts(res.data));
-  //     console.log(res);
-  //   } catch (error) {
-  //     console.log(error);
-
-  //   }
-  // };
-
-  // const addToCart = (item) => {
-  //   dispatch(sendDataToCart(item));
-  //    toast.success(`${item.productname} added to cart`);
-  // };
+  const { products, addToCart } = useProducts();
+  const [productId, setProductId] = useState(undefined);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const id = queryParams.get("id");
+  useEffect(() => {
+    if (id) {
+      setProductId(id);
+    }
+  }, [id]);
+  const appendQuery = (value) => {
+    window.history.pushState("", "", `/?id=${value}`);
+    setProductId(value);
+  };
+  const closeModal = () => {
+    window.history.pushState("", "", "/");
+    setProductId(undefined);
+  };
   return (
     <>
-      {modal && (
-        <div className="fixed bg-light w-full z-[999] ">
-            <ProductDetail />
+      {productId && (
+        <div className="fixed bg-light w-screen h-screen z-full overflow-y-auto ">
+          <ProductDetail id={productId} closeModal={closeModal} />
         </div>
       )}
       <Navbar />
@@ -92,21 +83,17 @@ const Home = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[70px] gap-x-[20px] sm:gap-x-[80px]">
             {products.map((item, i) => (
               <div key={i} className="flex flex-col justify-between">
-                {/* <Link
-                  to={`/product?id=${item._id}`}
-                  > */}
-                  <img
-                    src={`data:image/png;base64,${item.Photo}`}
-                    onClick={() => setModal(true)}
-                    alt={item.productname}
-                  />
-                {/* </Link> */}
+                <img
+                  src={`data:image/png;base64,${item.Photo}`}
+                  onClick={() => appendQuery(item._id)}
+                  alt={item.productname}
+                />
                 <div>
                   <p className="mt-[24px] leading-[28px] text-xl text-dark font-normal">
                     {item.productname}
                   </p>
                   <p className="mb-[16px] font-bold text-primary leading-[24px]">
-                    ₦{item.price}
+                    {formattedAmount(item.price)}
                   </p>
                   <button
                     onClick={() => addToCart(item)}
