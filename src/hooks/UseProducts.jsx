@@ -30,3 +30,4 @@ const useProducts = () => {
 };
 
 export default useProducts;
+// what is happening now
