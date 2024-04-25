@@ -10,7 +10,7 @@ const Favorites = () => {
   return (
     <>
       <Navbar />
-      <section className="pt-[150px] pb-[70px]">
+      <section className="pt-[150px] pb-[100px]">
         <div className="container">
           <h2 className="text-[32px] text-primary font-bold mb-12">
             Wishlist({favoritesCount})
