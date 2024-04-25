@@ -1,5 +1,6 @@
 import Header from "../Header";
 import { Link } from "react-router-dom";
+// import useProducts from "../../hooks/useProducts";
 import useProducts from "../../hooks/useProducts";
 import { formattedAmount } from "../../utils/FormattedAmount";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
