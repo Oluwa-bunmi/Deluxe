@@ -5,9 +5,12 @@ import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import logo from "../assets/logo.png";
 import { useSelector } from "react-redux";
+import { selectFavoritesCount } from "../store/reducers/favorite.reducer";
 const Header = () => {
   const [nav, setNav] = useState(false);
   const count = useSelector((data) => data.cart);
+
+  const favoritesCount = useSelector(selectFavoritesCount);
   const handleNav = () => {
     setNav(!nav);
   };
@@ -73,7 +76,7 @@ const Header = () => {
           </svg>
 
           <span className="flex items-center justify-center bg-darkTwo text-white font-bold rounded-[50%] w-[1.5rem] h-[1.5rem] text-base leading-[42px] absolute right-[-0.7rem] top-[-0.7rem]">
-            0
+            {favoritesCount}
           </span>
         </Link>
         <Link to="/cart" className="relative">

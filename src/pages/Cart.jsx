@@ -14,7 +14,7 @@ const Cart = () => {
   return (
     <>
       <Navbar />
-      <section className="py-[70px]">
+      <section className="pt-[200px] pb-[70px]">
         <div className="container">
           <h2 className="text-[32px] text-primary font-bold mb-12">
             Shopping Cart

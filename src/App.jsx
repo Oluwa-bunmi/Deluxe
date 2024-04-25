@@ -23,6 +23,7 @@ import { Provider } from "react-redux";
 import store, { persistor } from "./store";
 import Collections from "./pages/Collections";
 import { PersistGate } from "redux-persist/integration/react";
+import Favorites from "./pages/Favorites";
 function App() {
   return (
     <Provider store={store}>
@@ -40,6 +41,8 @@ function App() {
           <Route path="/terms-and-conditions" element={<Terms />} />;
           <Route path="/cart" element={<Cart />} />;
           <Route path="/collections" element={<Collections />} />;
+          <Route path="/favorites" element={<Favorites />} />;
+
           <Route
             element={
               <ProtectedRoute>
