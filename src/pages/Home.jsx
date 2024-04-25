@@ -8,7 +8,7 @@ import Discount from "../components/Discount";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
-import useProducts from "../hooks/useProducts.jsx";
+import useProducts from "../hooks/useProducts";
 import ProductDetail from "../components/ProductDetail";
 import { formattedAmount } from "../utils/FormattedAmount";
 const Home = () => {
