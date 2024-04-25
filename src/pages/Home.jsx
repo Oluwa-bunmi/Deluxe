@@ -38,7 +38,7 @@ const Home = () => {
         </div>
       )}
       <Navbar />
-      <section className="bg-light ">
+      <section className="bg-light">
         <div className="grid lg:grid-cols-2 items-center gap-[44px] container">
           <div className="lg:order-2">
             <img

@@ -2,9 +2,26 @@ import Header from "../Header";
 import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import { formattedAmount } from "../../utils/FormattedAmount";
+import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../store/reducers/favorite.reducer";
 const Collection = () => {
   const { products, addToCart } = useProducts();
 
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.favorites);
+
+  const handleFavoriteClick = (product) => {
+    const isFavorite = favorites.some((item) => item._id === product._id);
+    if (isFavorite) {
+      dispatch(removeFromFavorites(product));
+    } else {
+      dispatch(addToFavorites(product));
+    }
+  };
   return (
     <div>
       <Header />
@@ -18,12 +35,29 @@ const Collection = () => {
               key={i}
               className="flex flex-col justify-between w-full h-full"
             >
-              <Link to={`/product?id=${item._id}`}>
+              {/* <Link to={`/product?id=${item._id}`}> */}
+              <div className="relative">
                 <img
                   src={`data:image/png;base64,${item.Photo}`}
                   alt={item.productname}
                 />
-              </Link>
+                {favorites.some((favItem) => favItem._id === item._id) ? (
+                  <IoMdHeart
+                    onClick={() => handleFavoriteClick(item)}
+                    className="absolute top-[10px] right-[10px] text-[25px] text-primary cursor-pointer"
+                  />
+                ) : (
+                  <IoMdHeartEmpty
+                    onClick={() => handleFavoriteClick(item)}
+                    className="absolute top-[10px] right-[10px] text-[25px] text-primary cursor-pointer"
+                  />
+                )}
+                {/* <IoMdHeartEmpty
+                  onClick={handleFavoriteClick}
+                  className="absolute top-[10px] right-[10px] text-[25px] text-primary cursor-pointer"
+                /> */}
+              </div>
+              {/* </Link> */}
               <div>
                 <p className="mt-[24px] leading-[28px] text-xl text-dark font-normal">
                   {item.productname}

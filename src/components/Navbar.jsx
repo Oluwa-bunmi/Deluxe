@@ -3,7 +3,6 @@ import { FiSearch } from "react-icons/fi";
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { BsCart2 } from "react-icons/bs";
-
 import logo from "../assets/logo.png";
 import { useState } from "react";
 import { useSelector } from "react-redux";
