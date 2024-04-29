@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import user from "../assets/user.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import logo from "../assets/logo.png";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import { selectFavoritesCount } from "../store/reducers/favorite.reducer";
 const Header = () => {
   const [nav, setNav] = useState(false);
   const count = useSelector((data) => data.cart);
-
+const navigate = useNavigate();
   const favoritesCount = useSelector(selectFavoritesCount);
   const handleNav = () => {
     setNav(!nav);

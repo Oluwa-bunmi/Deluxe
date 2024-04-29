@@ -168,7 +168,7 @@ const Navbar = () => {
           <li className=" mx-[15px] my-[30px]">
             {token ? (
               <Link
-                to="/dashboard"
+                to="/dashboard/collection"
                 className="bg-primary text-white text-xl px-[38px] rounded-lg py-2"
               >
                 Account

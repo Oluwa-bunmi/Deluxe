@@ -24,6 +24,7 @@ import store, { persistor } from "./store";
 import Collections from "./pages/Collections";
 import { PersistGate } from "redux-persist/integration/react";
 import Favorites from "./pages/Favorites";
+import NotFound from "./pages/NotFound";
 function App() {
   return (
     <Provider store={store}>
@@ -42,7 +43,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />;
           <Route path="/collections" element={<Collections />} />;
           <Route path="/favorites" element={<Favorites />} />;
-
+          <Route path="*" element={<NotFound />} />
           <Route
             element={
               <ProtectedRoute>
