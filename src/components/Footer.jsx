@@ -73,7 +73,7 @@ const Footer = () => {
               Social
             </li>
             <li className="flex gap-[24px] items-center">
-              <Link>
+              <Link to="https://www.instagram.com/_deluxe_gem?igsh=MTNhaW1yYnpnY2NnOQ%3D%3D">
                 <img src={instagram} alt="instagram-icon" />
               </Link>
               <Link>

@@ -2,7 +2,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useFormik } from "formik";
 import { useState } from "react";
-import Header from "../Header";
 import { Axios } from "../../config";
 import { faqData } from "../../constants/data";
 import Request from "../../lib/requests";
@@ -64,7 +63,6 @@ const Support = () => {
   };
   return (
     <div>
-      <Header />
       <div className="container">
         <div className="flex mt-[76px] mb-8">
           {supportTabs.map((item) => (

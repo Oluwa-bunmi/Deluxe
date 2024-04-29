@@ -78,30 +78,32 @@ const Sidenav = () => {
   };
   return (
     <>
-      <div className="bg-light pl-[40px] py-[40px] w-[350px] rounded-md hidden lg:flex flex-col items-start justify-start gap-4">
+      <div className="bg-light pl-[40px] pb-[40px] w-full max-w-[280px] rounded-md hidden lg:flex flex-col items-start justify-between h-full">
         <Link to="/dashboard/collection">
           <img src={logo} alt="logo" />
         </Link>
-        {links.map((item) => (
-          <NavLink
-            to={item.to}
-            key={item.text}
-            className="dashboard w-full h-14 flex justify-between items-center px-3 lg:rounded transition-all duration-300 text-base font-normal border-b lg:border-none border-gray last:border-none"
-          >
-            <div className="flex gap-[16px] items-center">
-              <span dangerouslySetInnerHTML={{ __html: item.icon }} />
-              <span className="text-xl text-dark font-medium leading-[28px]">
-                {item.text}
+        <div>
+          {links.map((item) => (
+            <NavLink
+              to={item.to}
+              key={item.text}
+              className="dashboard w-full h-14 flex justify-between items-center px-3 lg:rounded transition-all duration-300 text-base font-normal border-b lg:border-none border-gray last:border-none"
+            >
+              <div className="flex gap-[16px] items-center">
+                <span dangerouslySetInnerHTML={{ __html: item.icon }} />
+                <span className="text-xl text-dark font-medium leading-[28px]">
+                  {item.text}
+                </span>
+              </div>
+              <span className="lg:hidden">
+                <BiChevronRight size={25} />
               </span>
-            </div>
-            <span className="lg:hidden">
-              <BiChevronRight size={25} />
-            </span>
-          </NavLink>
-        ))}
+            </NavLink>
+          ))}
+        </div>
         <button
           onClick={handleLogout}
-          className="mt-[200px] flex items-center gap-[16px] text-primary text-xl font-medium"
+          className="px-3 flex items-center gap-[16px] text-primary text-xl font-medium"
         >
           Log Out
           <svg

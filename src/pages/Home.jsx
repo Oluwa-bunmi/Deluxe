@@ -11,12 +11,14 @@ import { useEffect, useState } from "react";
 import useProducts from "../hooks/useProducts";
 import ProductDetail from "../components/ProductDetail";
 import { formattedAmount } from "../utils/FormattedAmount";
+import { useSelector } from "react-redux";
 const Home = () => {
   const { products, addToCart } = useProducts();
   const [productId, setProductId] = useState(undefined);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const id = queryParams.get("id");
+  const cart = useSelector((state) => state.cart);
   useEffect(() => {
     if (id) {
       setProductId(id);
@@ -95,12 +97,17 @@ const Home = () => {
                   <p className="mb-[16px] font-bold text-primary leading-[24px]">
                     {formattedAmount(item.price)}
                   </p>
-                  <button
-                    onClick={() => addToCart(item)}
-                    className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
-                  >
-                    Add to Cart
-                  </button>
+
+                  {cart.some((favItem) => favItem._id === item._id) ? (
+                    <p>Added to cart</p>
+                  ) : (
+                    <button
+                      onClick={() => addToCart(item)}
+                      className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
+                    >
+                      Add to Cart
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
