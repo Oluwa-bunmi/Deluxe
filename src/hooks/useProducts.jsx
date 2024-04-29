@@ -4,7 +4,6 @@ import { sendDataToProducts } from "../store/reducers/product.reducer";
 import { sendDataToCart } from "../store/reducers/cart.reducer";
 import Request from "../lib/requests";
 import { Axios } from "../config";
-import { toast } from "react-toastify";
 import ErrorHandler from "../utils/ErrorHandler";
 const useProducts = () => {
   const dispatch = useDispatch();
@@ -20,7 +19,7 @@ const useProducts = () => {
   };
   const addToCart = (item) => {
     dispatch(sendDataToCart({ ...item, quantity: 1 }));
-    toast.success(`${item.productname} added to cart`);
+   
   };
 
   useEffect(() => {

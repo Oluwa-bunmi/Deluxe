@@ -53,7 +53,7 @@ const Privacy = () => {
   return (
     <>
       <Navbar />
-      <section className="py-16">
+      <section className="pt-36 pb-16">
         <div className="container">
           <h1 className="text-primary text-center font-bold text-3xl mb-[30px]">
             OUR PRIVACY POLICY

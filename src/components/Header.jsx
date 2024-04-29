@@ -20,7 +20,7 @@ const Header = () => {
     navigate("/login");
   };
   return (
-    <div className="container flex justify-between pt-[36px] pb-[40px]">
+    <div className="container flex justify-between bg-white pt-[36px] pb-[40px]">
       <div className="flex items-center gap-[55px]">
         <h1 className="accia hidden lg:block text-primary text-base lg:text-[24px]">
           Welcome {localStorage.getItem("username")}

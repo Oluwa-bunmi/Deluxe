@@ -83,9 +83,9 @@ const Navbar = () => {
           <li className="text-[16px] font-normal text-tertiary leading-[24px] hover:font-bold">
             <NavLink to="/contact-us">Contact Us</NavLink>
           </li>
-          <li className="text-[16px] font-normal text-tertiary leading-[24px] hover:font-bold">
+          {/* <li className="text-[16px] font-normal text-tertiary leading-[24px] hover:font-bold">
             <NavLink to="/collections">Collections</NavLink>
-          </li>
+          </li> */}
         </ul>
         <div className="flex items-center gap-[15px] md:gap-[20px]">
           {/* <div className="bg-light w-[300px] py-[12px] gap-[16px] flex justify-center items-center rounded-[20px] text-primary">

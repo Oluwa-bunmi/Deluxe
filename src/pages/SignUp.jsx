@@ -40,6 +40,7 @@ const SignUp = () => {
 
         navigate("/login");
         localStorage.setItem("username", payload.username);
+        localStorage.setItem("email", payload.email);
       } else {
         toast.error("Not successful, please try again.", {
           position: "top-right",

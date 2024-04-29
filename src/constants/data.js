@@ -1,5 +1,22 @@
 import ada from "../assets/adanna.png";
 import chi from "../assets/chinedu.png";
+import card from "../assets/mastercard.png";
+import transfer from "../assets/transfer.png";
+import phone from "../assets/phone.png";
+export const payment = [
+  {
+    method: "Bank Card",
+    image: card,
+  },
+  {
+    method: "Bank Transfer",
+    image: transfer,
+  },
+  {
+    method: "USSD",
+    image: phone,
+  },
+];
 export const testimonial = [
   {
     name: "Adanna Nwosu",
@@ -35,6 +52,4 @@ export const faqData = [
     answer:
       "Lorem ipsum dolor sit amet consectetur. Arcu pulvinar mi lacinia vulputate massa felis.",
   },
-
 ];
-
