@@ -3,10 +3,13 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { formattedAmount } from "../utils/FormattedAmount";
 import { selectFavoritesCount } from "../store/reducers/favorite.reducer";
+import useProducts from "../hooks/useProducts";
 
 const Favorites = () => {
   const favorites = useSelector((data) => data.favorites.favorites);
   const favoritesCount = useSelector(selectFavoritesCount);
+  const cart = useSelector((state) => state.cart);
+    const { addToCart } = useProducts();
   return (
     <>
       <Navbar />
@@ -33,12 +36,16 @@ const Favorites = () => {
                   <p className="mb-[16px] font-bold text-primary leading-[24px]">
                     {formattedAmount(favorite.price)}
                   </p>
-                  <button
-                    // onClick={() => addToCart(item)}
-                    className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
-                  >
-                    Add to Cart
-                  </button>
+                  {cart.some((favItem) => favItem._id === favorite._id) ? (
+                    <p>Added to cart</p>
+                  ) : (
+                    <button
+                      onClick={() => addToCart(favorite)}
+                      className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
+                    >
+                      Add to Cart
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
