@@ -19,7 +19,6 @@ const useProducts = () => {
   };
   const addToCart = (item) => {
     dispatch(sendDataToCart({ ...item, quantity: 1 }));
-   
   };
 
   useEffect(() => {

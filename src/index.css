@@ -7,7 +7,7 @@
   @apply mx-auto w-[90%] ;
 }
 .active{
-    /* font-weight: 700; */
+    font-weight: 700;
 }
  .dashboard.active{
   background-color: #891619;

@@ -4,6 +4,7 @@ import facebook from "../assets/facebook.png";
 import whatsapp from "../assets/whatsapp.png";
 import twitter from "../assets/twitter.png";
 import instagram from "../assets/instagram.png";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 const Footer = () => {
   return (
     <footer className="bg-secondary pt-[80px] pb-[120px]">
@@ -106,6 +107,12 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <FloatingWhatsApp
+        phoneNumber="+2347040573717"
+        accountName="Deluxe Gem"
+        statusMessage="Typically replies within 1min"
+        avatar="/favicon.png"
+      />
     </footer>
   );
 };
