@@ -51,36 +51,42 @@ const Cart = () => {
           <h2 className="text-[32px] text-primary font-bold mb-12">
             Shopping Cart
           </h2>
-          <div className="grid lg:grid-cols-[70%_30%] gap-4">
-            <table className="w-full">
-              <tr>
-                <th className="text-start pb-3">PRODUCT</th>
-                <th className="text-start pb-3">PRICE</th>
-                <th className="text-start pb-3">QUANTITY</th>
-                <th className="text-start pb-3">TOTAL</th>
-              </tr>
-              {cartItems.map((item, i) => (
-                <CartItem item={item} key={i} />
-              ))}
-            </table>
-            <div className="sticky top-0 p-8 shadow-shadow bg-white h-fit">
-              <div className="flex justify-between text-cyber font-medium">
-                <p>TOTAL</p>
-                <p>{formattedAmount(totalAmount)}</p>
+          {cartItems.length > 0 ? (
+            <div className="grid lg:grid-cols-[70%_30%] gap-4">
+              <table className="w-full">
+                <tr>
+                  <th className="text-start pb-3">PRODUCT</th>
+                  <th className="text-start pb-3">PRICE</th>
+                  <th className="text-start pb-3">QUANTITY</th>
+                  <th className="text-start pb-3">TOTAL</th>
+                </tr>
+                {cartItems.map((item, i) => (
+                  <CartItem item={item} key={i} />
+                ))}
+              </table>
+              <div className="sticky top-0 p-8 shadow-shadow bg-white h-fit">
+                <div className="flex justify-between text-cyber font-medium">
+                  <p>TOTAL</p>
+                  <p>{formattedAmount(totalAmount)}</p>
+                </div>
+                <p className="mb-4 mt-8 text-cyber text-base font-medium">
+                  Shipping & taxes calculated at checkout
+                </p>
+                {/* <Link className="" to="/checkout"> */}
+                <button
+                  onClick={() => setOpenModal(true)}
+                  className="bg-primary text-white text-[16px] px-[38px] rounded-lg py-2"
+                >
+                  Checkout
+                </button>
+                {/* </Link> */}
               </div>
-              <p className="mb-4 mt-8 text-cyber text-base font-medium">
-                Shipping & taxes calculated at checkout
-              </p>
-              {/* <Link className="" to="/checkout"> */}
-              <button
-                onClick={() => setOpenModal(true)}
-                className="bg-primary text-white text-[16px] px-[38px] rounded-lg py-2"
-              >
-                Checkout
-              </button>
-              {/* </Link> */}
             </div>
-          </div>
+          ) : (
+            <p className="text-xl">
+              Your cart is currently empty, <Link to="/" className="text-primary underline"> return to shop</Link>
+            </p>
+          )}
         </div>
       </section>
 

@@ -41,6 +41,7 @@ const SignUp = () => {
         navigate("/login");
         localStorage.setItem("username", payload.username);
         localStorage.setItem("email", payload.email);
+        localStorage.setItem("password", payload.password);
       } else {
         toast.error("Not successful, please try again.", {
           position: "top-right",

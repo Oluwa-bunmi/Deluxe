@@ -83,9 +83,9 @@ const Footer = () => {
               <Link>
                 <img src={twitter} alt="twitter-icon" />
               </Link>
-              <Link>
+              {/* <Link>
                 <img src={whatsapp} alt="whatsapp-icon" />
-              </Link>
+              </Link> */}
             </li>
           </ul>
           <ul>

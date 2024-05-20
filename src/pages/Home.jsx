@@ -12,8 +12,10 @@ import useProducts from "../hooks/useProducts";
 import ProductDetail from "../components/ProductDetail";
 import { formattedAmount } from "../utils/FormattedAmount";
 import { useSelector } from "react-redux";
+import { FaCircleNotch } from "react-icons/fa6";
+
 const Home = () => {
-  const { products, addToCart } = useProducts();
+  const { products, addToCart, loading } = useProducts();
   const [productId, setProductId] = useState(undefined);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -81,37 +83,40 @@ const Home = () => {
             Be the first to check out our <br /> latest arrivals section and
             discover our hottest trends and newest products
           </p>
+          {loading ? (
+            <FaCircleNotch className="block mx-auto animate-spin text-primary text-xl" />
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[70px] gap-x-[20px] sm:gap-x-[80px]">
+              {products.map((item, i) => (
+                <div key={i} className="flex flex-col justify-between">
+                  <img
+                    src={`data:image/png;base64,${item.Photo}`}
+                    onClick={() => appendQuery(item._id)}
+                    alt={item.productname}
+                  />
+                  <div>
+                    <p className="mt-[24px] leading-[28px] text-xl text-dark font-normal">
+                      {item.productname}
+                    </p>
+                    <p className="mb-[16px] font-bold text-primary leading-[24px]">
+                      {formattedAmount(item.price)}
+                    </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[70px] gap-x-[20px] sm:gap-x-[80px]">
-            {products.map((item, i) => (
-              <div key={i} className="flex flex-col justify-between">
-                <img
-                  src={`data:image/png;base64,${item.Photo}`}
-                  onClick={() => appendQuery(item._id)}
-                  alt={item.productname}
-                />
-                <div>
-                  <p className="mt-[24px] leading-[28px] text-xl text-dark font-normal">
-                    {item.productname}
-                  </p>
-                  <p className="mb-[16px] font-bold text-primary leading-[24px]">
-                    {formattedAmount(item.price)}
-                  </p>
-
-                  {cart.some((favItem) => favItem._id === item._id) ? (
-                    <p>Added to cart</p>
-                  ) : (
-                    <button
-                      onClick={() => addToCart(item)}
-                      className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
-                    >
-                      Add to Cart
-                    </button>
-                  )}
+                    {cart.some((favItem) => favItem._id === item._id) ? (
+                      <p>Added to cart</p>
+                    ) : (
+                      <button
+                        onClick={() => addToCart(item)}
+                        className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
+                      >
+                        Add to Cart
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
       <Testimonial />

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import { formattedAmount } from "../utils/FormattedAmount";
 import { selectFavoritesCount } from "../store/reducers/favorite.reducer";
 import useProducts from "../hooks/useProducts";
+import { Link } from "react-router-dom";
 
 const Favorites = () => {
   const favorites = useSelector((data) => data.favorites.favorites);
@@ -18,38 +19,50 @@ const Favorites = () => {
           <h2 className="text-[32px] text-primary font-bold mb-12">
             Wishlist({favoritesCount})
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-[42px] items-start">
-            {favorites.map((favorite, index) => (
-              // <div className="">
-              <div
-                key={index}
-                className="flex flex-col justify-between w-full h-full"
-              >
-                <img
-                  src={`data:image/png;base64,${favorite.Photo}`}
-                  alt={favorite.productname}
-                />
-                <div>
-                  <p className="mt-[24px] leading-[28px] text-xl text-dark font-normal">
-                    {favorite.productname}
-                  </p>
-                  <p className="mb-[16px] font-bold text-primary leading-[24px]">
-                    {formattedAmount(favorite.price)}
-                  </p>
-                  {cart.some((favItem) => favItem._id === favorite._id) ? (
-                    <p>Added to cart</p>
-                  ) : (
-                    <button
-                      onClick={() => addToCart(favorite)}
-                      className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
-                    >
-                      Add to Cart
-                    </button>
-                  )}
+          {favorites.length > 0 ? (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-[42px] items-start">
+              {favorites.map((favorite, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col justify-between w-full h-full"
+                >
+                  <img
+                    src={`data:image/png;base64,${favorite.Photo}`}
+                    alt={favorite.productname}
+                  />
+                  <div>
+                    <p className="mt-[24px] leading-[28px] text-xl text-dark font-normal">
+                      {favorite.productname}
+                    </p>
+                    <p className="mb-[16px] font-bold text-primary leading-[24px]">
+                      {formattedAmount(favorite.price)}
+                    </p>
+                    {cart.some((favItem) => favItem._id === favorite._id) ? (
+                      <p>Added to cart</p>
+                    ) : (
+                      <button
+                        onClick={() => addToCart(favorite)}
+                        className="w-full bg-primary py-2 rounded-lg text-white font-medium text-base"
+                      >
+                        Add to Cart
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-xl">
+              No items in your wishlist yet,{" "}
+              <Link
+                to="/dashboard/collection"
+                className="underline text-primary"
+              >
+                {" "}
+                add your favorites now
+              </Link>
+            </p>
+          )}
         </div>
       </section>
       <Footer />
