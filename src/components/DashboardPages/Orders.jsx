@@ -1,6 +1,4 @@
 import Dummy from "../Dummy";
-import Header from "../Header";
-
 const Orders = () => {
   return (
     <>

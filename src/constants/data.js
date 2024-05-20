@@ -53,3 +53,20 @@ export const faqData = [
       "Lorem ipsum dolor sit amet consectetur. Arcu pulvinar mi lacinia vulputate massa felis.",
   },
 ];
+export const accountFields = [
+  { label: "Username", name: "username", type: "text" },
+  { label: "Email", name: "email", type: "text" },
+  { label: "Location", name: "location", type: "text" },
+  { label: "Password", name: "password", type: "text" },
+];
+
+export const paymentFields = [
+  { label: "Account Name", name: "account", type: "text" },
+  { label: "Bank Name", name: "bank", type: "text" },
+  { label: "Account Number", name: "accountNum", type: "text" },
+];
+
+export const deliveryFields = [
+  { label: "Full Address", name: "address", type: "text" },
+  { label: "Phone Number", name: "phone", type: "text" },
+];
